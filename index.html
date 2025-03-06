@@ -3,125 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Card Visit</title>
-    <style> 
-        @font-face {
-            font-family: 'PixelFont';
-            src: url('PixelSansSerif.ttf') format('truetype');
-        }
-
+    <title>Business Card</title>
+    <style>
+        /* Background GIF */
         body {
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background: url('your-background.gif') no-repeat center center fixed;
+            background-image: url('your-background.gif');
             background-size: cover;
+            background-position: center;
+        }
+
+        /* Card */
+        .card {
+            background-color: rgba(255, 255, 255, 0.85);
+            width: 500px;
+            padding: 30px;
+            border-radius: 20px;
             text-align: center;
-            font-family: 'PixelFont', sans-serif;
-            position: relative;
-            margin: 0;
-            padding: 0;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
         }
-        
-        .text-link {
-            position: absolute;
-            color: black;  /* Thay màu chữ thành đen */
-            font-size: 18px;
-            text-decoration: none;
-            font-weight: bold;
-            font-family: 'PixelFont', sans-serif;
-        }
-        
-        .text-link:hover {
-            text-decoration: underline;
-        }
-        
-        #text1 {
-            top: 55%;
-            left: 46%;
-        }
-        
-        #text2 {
-            top: 65%;
-            left: 46%;
+
+        /* Title image (PNG) */
+        .card img.title {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 15px;
         }
 
         /* Avatar */
-        #avatar {
-            position: absolute;
-            top: 40%;  /* Điều chỉnh vị trí theo trục Y */
-            left: 50%;  /* Điều chỉnh vị trí theo trục X */
-            transform: translate(-50%, -50%);
-            width: 120px; /* Điều chỉnh kích thước avatar */
+        .avatar {
+            width: 120px;
             height: 120px;
             border-radius: 50%;
-            border: 3px solid white;
+            margin-bottom: 20px;
+            border: 3px solid #fff;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
         }
 
-        /* Ảnh info nhỏ vừa với background */
-        img[src='info.png'] {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;  /* Giữ tỷ lệ ảnh mà không bị méo */
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        /* Contact info */
+        .contact-info {
+            font-size: 20px;
+            line-height: 1.7;
         }
 
-        /* Media query cho điện thoại */
-        @media (max-width: 768px) {
-            .text-link {
-                font-size: 16px;  /* Giảm kích thước chữ cho điện thoại */
-            }
-
-            #text1 {
-                top: 50%;
-                left: 50%;
-                transform: translateX(-50%); /* Căn giữa cho điện thoại */
-            }
-
-            #text2 {
-                top: 60%;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-
-            #avatar {
-                width: 100px; /* Avatar nhỏ hơn trên điện thoại */
-                height: 100px;
-            }
+        .contact-info a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
         }
 
-        /* Media query cho các màn hình nhỏ hơn (điện thoại) */
-        @media (max-width: 480px) {
-            .text-link {
-                font-size: 14px; /* Giảm kích thước chữ hơn cho các màn hình nhỏ */
-            }
-
-            #text1 {
-                top: 45%;
-            }
-
-            #text2 {
-                top: 55%;
-            }
-
-            #avatar {
-                width: 90px; /* Avatar nhỏ hơn nữa trên điện thoại nhỏ */
-                height: 90px;
-            }
+        .contact-info a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <img src="info.png" alt="Card Visit">
-    
-    <a href="https://www.facebook.com/profile.php?id=100045262986210" class="text-link" id="text1">Facebook: Thong Hoang</a>
-    <a href="https://trangweb2.com" class="text-link" id="text2">NumberPhone: 0785396344</a>
-
-    <!-- Ảnh avatar có thể chỉnh vị trí bằng CSS -->
-    <img src="default-avatar.png" id="avatar" alt="Avatar">
+    <div class="card">
+        <img class="title" src="your-title-image.png" alt="Business Card Title">
+        <img class="avatar" src="your-avatar.png" alt="Avatar">
+        <div class="contact-info">
+            <p>Email: <a href="mailto:dragonvn0823@gmail.com">dragonvn0823@gmail.com</a></p>
+            <p>Phone: <a href="0785396344">0785396344</a></p>
+            <p>Facebook: <a href="https://www.facebook.com/profile.php?id=100045262986210" target="_blank">Facebook: Thong Hoang</a></p>
+        </div>
+    </div>
 </body>
 </html>
